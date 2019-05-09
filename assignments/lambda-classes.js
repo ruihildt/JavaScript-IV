@@ -1,11 +1,11 @@
 // Declare Person class and define speak() method
 
 class Person {
-constructor({name, age, location, gender}) {
-    this.name = name;
-    this.age = age;
-    this.location = location;
-    this.gender = gender;
+constructor(dataPerson) {
+    this.name = dataPerson.name;
+    this.age = dataPerson.age;
+    this.location = dataPerson.location;
+    this.gender = dataPerson.gender;
 }
 
     speak() {
@@ -16,15 +16,11 @@ constructor({name, age, location, gender}) {
 // Declare Instructor class by extending Person
 // and define demo() and grade() methods
 class Instructor extends Person {
-    constructor({
-            specialty,
-            favLanguage,
-            catchPhrase
-        }) {
-        super(arguments[0]);
-        this.specialty = specialty;
-        this.favLanguage = favLanguage;
-        this.catchPhrase = catchPhrase;
+    constructor(dataInstructor) {
+        super(dataInstructor);
+        this.specialty = dataInstructor.specialty;
+        this.favLanguage = dataInstructor.favLanguage;
+        this.catchPhrase = dataInstructor.catchPhrase;
     }
 
     demo(subject) {
@@ -32,22 +28,18 @@ class Instructor extends Person {
     }
 
     grade(student, subject) {
-        console.log(`${student.name} receives a perfect score on ${subject}`);
+        console.log(`${student} receives a perfect score on ${subject}`);
     }
 }
 
 // Declare Student class by extending Person and define
 // listsSubjects(), PRAssignement() and sprintChallenge() methods
 class Student extends Person {
-    constructor({
-        previousBackground,
-        className,
-        favSubjects
-    }) {
-        super(arguments[0]);
-        this.previousBackground = previousBackground;
-        this.className = className;
-        this.favSubjects = favSubjects;
+    constructor(dataStudent) {
+        super(dataStudent);
+        this.previousBackground = dataStudent.previousBackground;
+        this.className = dataStudent.className;
+        this.favSubjects = dataStudent.favSubjects;
     }
 
     listsSubjects() {
@@ -69,13 +61,10 @@ class Student extends Person {
 // standUp() and debugsCode() methods
 
 class ProjectManager extends Instructor {
-    constructor({
-        gradClassName,
-        favInstructor
-    }) {
-        super(arguments[0]);
-        this.gradClassName = gradClassName;
-        this.favInstructor = favInstructor
+    constructor(dataPM) {
+        super(dataPM);
+        this.gradClassName = dataPM.gradClassName;
+        this.favInstructor = dataPM.favInstructor
     }
 
     standUp(channel) {
@@ -83,7 +72,7 @@ class ProjectManager extends Instructor {
     }
 
     debugsCode(student, subject) {
-        console.log(`${this.name} debugs ${student.name}'s code on ${subject}.`);
+        console.log(`${this.name} debugs ${student}'s code on ${subject}.`);
     }
 }
 
