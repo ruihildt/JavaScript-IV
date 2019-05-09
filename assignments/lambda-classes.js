@@ -59,15 +59,36 @@ class Student extends Person {
         console.log(`${this.name} has submitted a PR for ${subject}`);
     }
 
-    sprintChallenge() {
+    sprintChallenge(subject) {
         console.log(`${this.name} has begun sprint challenge on ${subject}`);
+    }
+}
+
+// Declare ProjectManager class by extending Instructors and define
+// standUp() and debugsCode() methods
+
+class ProjectManager extends Instructor {
+    constructor({
+        gradClassName,
+        favInstructor
+    }) {
+        super(arguments[0]);
+        this.gradClassName = gradClassName;
+        this.favInstructor = favInstructor
+    }
+
+    standUp(channel) {
+        console.log(`${this.name} announces to ${channel}, @${channel} standby times!`);
+    }
+
+    debugsCode(student, subject) {
+        console.log(`${this.name} debugs ${student.name}'s code on ${subject}`);
     }
 }
 
 
 
-
-// Instanciate fred the Instructor
+// Instanciate Fred the Instructor
 const fred = new Instructor({
     name: 'Fred',
     location: 'Bedrock',
@@ -89,3 +110,17 @@ const jean = new Student({
     className: `WebWorld125`,
     favSubjects: ['Prototypes','CSS', 'Containers']
 });
+
+// Instanciate Rick the ProjectManager
+
+const rick = new ProjectManager ({
+    name: 'Rick',
+    location: 'Universe',
+    age: 78,
+    gender: 'male',
+    favLanguage: 'Basic',
+    specialty: 'Time Travelling',
+    catchPhrase: 'wubba lubba dub dub',
+    gradClassName: 'Webspace99',
+    favInstructor: 'Morty'
+})
