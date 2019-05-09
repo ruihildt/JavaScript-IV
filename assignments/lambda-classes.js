@@ -51,8 +51,9 @@ class Student extends Person {
     }
 
     listsSubjects() {
-        // Need to make it enumerate one by one
-        console.log(this.favSubjects);
+        for (var i = 0; i < this.favSubjects.length; i++) {
+            console.log(this.favSubjects[i]);
+            };
     }
 
     PRAssignement(subject) {
@@ -82,7 +83,7 @@ class ProjectManager extends Instructor {
     }
 
     debugsCode(student, subject) {
-        console.log(`${this.name} debugs ${student.name}'s code on ${subject}`);
+        console.log(`${this.name} debugs ${student.name}'s code on ${subject}.`);
     }
 }
 
