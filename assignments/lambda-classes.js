@@ -9,7 +9,7 @@ constructor(dataPerson) {
 }
 
     speak() {
-        return `Hello my name is ${this.name}, I am from ${this.location}`;
+        console.log(`Hello my name is ${this.name}, I am from ${this.location}`);
     }
 }
 
